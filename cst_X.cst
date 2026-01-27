@@ -1,0 +1,30 @@
+#same constraints for CL3,4,5
+#GLU/E 420
+#ASP/D 231
+
+
+
+#GLU420 to O
+
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: O3 C4 O1
+  TEMPLATE::   ATOM_MAP: 1 residue3:  CL3
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OE2 CD CG
+  TEMPLATE::   ATOM_MAP: 2 residue1:  E
+
+  CONSTRAINT:: distanceAB:  3.0  0.2 100 0
+CST::END
+
+#ASP231 to C4
+
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C4 O3 C7
+  TEMPLATE::   ATOM_MAP: 1 residue3:  CL3
+
+  TEMPLATE::   ATOM_MAP: 2 atom_name: OD2 CG CB
+  TEMPLATE::   ATOM_MAP: 2 residue1:  D
+
+  CONSTRAINT:: distanceAB:   3.0  0.2 100 0
+  CONSTRAINT::    angle_A: 110.0 10.0 100 360
+CST::END
