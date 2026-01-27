@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=41CL3
+#SBATCH --job-name=dock
 #SBATCH --output=logs/out_%A_%a.txt
 #SBATCH --cpus-per-task=1
 #SBATCH --array=1-250
