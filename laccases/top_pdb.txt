@@ -1,0 +1,1 @@
+REMARK 666 MATCH TEMPLATE X  4EP   1   MATCH MOTIF A HIS    257  1              
