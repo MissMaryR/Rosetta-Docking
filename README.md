@@ -4,9 +4,9 @@
 
 1. Build ligand
 2. Click setup -> calculations -> conformer distribution
-⋅⋅⋅⋅* with molecular mechanics and MMFF
-⋅⋅⋅⋅* increase max number of conformers to 100%
-⋅⋅⋅⋅* if its a large ligand, it can take hours to run
+* with molecular mechanics and MMFF
+* increase max number of conformers to 100%
+* if its a large ligand, it can take hours to run
 3. After running, a new window will open
 4. Bottom will show number of conformers, left arrow to go through them
 5. Save library as mol2
