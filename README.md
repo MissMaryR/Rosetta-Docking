@@ -3,16 +3,14 @@
 ## Prepare Ligand library with Spartan
 
 1. Build ligand
-2. Another item
-⋅⋅⋅⋅* Unordered sub-list. 
-3. Click setup -> calculations -> conformer distribution
+2. Click setup -> calculations -> conformer distribution
 ⋅⋅⋅⋅* with molecular mechanics and MMFF
 ⋅⋅⋅⋅* increase max number of conformers to 100%
 ⋅⋅⋅⋅* if its a large ligand, it can take hours to run
-4. After running, a new window will open
-5. Bottom will show number of conformers, left arrow to go through them
-6. Save library as mol2
-7. Also save the original ligand as a spartan file and mol2 file - just in case
+3. After running, a new window will open
+4. Bottom will show number of conformers, left arrow to go through them
+5. Save library as mol2
+6. Also save the original ligand as a spartan file and mol2 file - just in case
 
 [refer to video](https://www.youtube.com/watch?v=ocuT3tYeK7I) 
 
