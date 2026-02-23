@@ -17,7 +17,7 @@
 ## Use HIVE to prepare ligands for Rosetta
 
 1. upload CL3.mol2 library conformer to HIVE
-⋅⋅⋅⋅* CL3 can instead be any 3 letter/number code for a ligand, dont use 001, be creative
+* CL3 can instead be any 3 letter/number code for a ligand, dont use 001, be creative
 3. run with
 ```
 python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/python/public/generic_potential/mol2genparams.py -s CL3.mol2
