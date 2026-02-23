@@ -44,3 +44,35 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 
 ## 4) Use PyMOL to place ligand into active site
 
+### To help guide ligand placement in the active site, try using: [Chai](https://www.chaidiscovery.com/), AF3, or [Boltz](https://github.com/jwohlwend/boltz)
+* they will generate PDBs with a general ligand placement - often not close enough to catalytic residues for docking analysis but acts as a guide
+
+1. Open relaxed PDB & ligand (CL3.pdb) in PyMOL
+2. If you made a roughly docked PDB from sources above try using the [Pair fit](https://pymolwiki.org/index.php/Pair_fit) commands in PyMOL
+   * also add the roughly docked PDB to the PyMOL session and align it with the relaxed PDB
+   * run commands in the command line in PyMOL
+   * use SHOW to show atom names on catalytic residues & ligands
+   * it works by moving LIG1 (your ligand) on top of LIG2 (ligand already in active site)
+   * ```
+     pair_fit LIG1/ATOM1+ATOM2, LIG2/ATOM1+ATOM2
+     ```
+   * example code with moving CL3 (your ligand) on top of LIG2
+   * ```
+     pair_fit CL3/O1+C4+O3+C7, LIG2/O2_1+C3_1+O3_1+C4_1
+     ```
+   * keep pressing enter to move it to different positions, if several are available
+   * alternatively you can adjust the number of atoms to align
+   * save the session
+3. Alternatively, you can use the Pair Fit method to align the ligand to a catalytic residue
+   * then use editing mode in PyMOL to move the ligand into a spot that is catalytically relevant
+   * it does not need to be super specific, just within a couple angstroms, the constraint file will tell rosetta where to place the ligand
+   * recommend using a mouse for editing mode
+5. Make sure to delete everything except the relaxed PDB and the placed ligand (CL3.pdb)
+   * keep the order with relaxed PDB first and then the ligand, this matters for the pdb file
+6. File -> export structure -> export molecule -> save as PDB
+7. Open the saved file and make sure your ligand is at the bottom and labeled as chain X
+ * if 2 ligands - X & Y
+
+
+     
+
