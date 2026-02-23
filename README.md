@@ -36,4 +36,11 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 
 ## Use HIVE to prepare enzyme for Rosetta
 
-1. 
+1. Acquire enzyme PDB from [Uniprot](https://www.uniprot.org/) or [RCSB PDB](https://www.rcsb.org/)
+   or refer to my [Alphafold3 Submission for HIVE](https://github.com/MissMaryR/AlphaFold3-Submission-for-HIVE) to generate a PDB from AF3
+2. Refer to my [Relax pdbs for Rosetta](https://github.com/MissMaryR/Relax-pdbs-for-Rosetta) to prepare your PDB
+
+
+
+## Use PyMOL to place ligand into active site
+
