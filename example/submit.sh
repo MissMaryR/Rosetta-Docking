@@ -2,7 +2,7 @@
 #SBATCH --job-name=dock
 #SBATCH --output=logs/out_%A_%a.txt
 #SBATCH --cpus-per-task=1
-#SBATCH --array=1-250
+#SBATCH --array=1-100
 #SBATCH --partition=low
 #SBATCH --time=48:00:00
 #SBATCH --mem=10G
