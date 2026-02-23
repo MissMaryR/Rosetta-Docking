@@ -42,7 +42,7 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 
 
 
-## 4) Use PyMOL to place ligand into active site
+## 4) Use PyMOL to place ligand into active site - makes docked.pdb file
 
 ### To help guide ligand placement in the active site, try using: [Chai](https://www.chaidiscovery.com/), AF3, or [Boltz](https://github.com/jwohlwend/boltz)
 * they will generate PDBs with a general ligand placement - often not close enough to catalytic residues for docking analysis but acts as a guide
@@ -71,7 +71,35 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
    * keep the order with relaxed PDB first and then the ligand, this matters for the pdb file
 6. File -> export structure -> export molecule -> save as PDB
 7. Open the saved file and make sure your ligand is at the bottom and labeled as chain X
- * if 2 ligands - X & Y
+   * if 2 ligands - X & Y
+8. This will be your docked.pdb file
+
+## 5) Use PyMOL to make constraint file - cst_X.cst
+
+1. Open the cst_X.cst with emacs or textedit
+2. We refer to the [RosettaCommons page](https://docs.rosettacommons.org/docs/latest/rosetta_basics/file_types/match-cstfile-format) for how to make constraints
+3. Here is a diagram for ATOM labels:
+   * <img width="518" height="282" alt="Screenshot 2026-02-23 at 3 49 32 PM" src="https://github.com/user-attachments/assets/ffa6f6db-52a4-4bd6-a5b6-8b3c8dc3dee9" />
+   * example constraint file
+```
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C1 C2 C3
+  TEMPLATE::   ATOM_MAP: 1 residue3: CL3
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: O1 O2 O3
+  TEMPLATE::   ATOM_MAP: 2 residue1: E
+
+  CONSTRAINT:: distanceAB:    2.00   0.30 100.00  1        0
+  CONSTRAINT::    angle_A:  105.10   6.00 100.00  360.00   1
+  CONSTRAINT::    angle_B:  116.90   5.00  50.00  360.00   1
+  CONSTRAINT::  torsion_A:  105.00  10.00  50.00  360.00   2
+  CONSTRAINT::  torsion_B:  180.00  10.00  25.00  180.00   4
+  CONSTRAINT:: torsion_AB:    0.00  45.00   0.00  180.00   5
+CST::END
+```
+   * use residue3 for your ligand and residue1 for the residue using its' one letter code
+   * my example cst_X.cst file only uses a distance and angle constraint, less constraints are better but more may need to be used if necessary
+
 
 
      
