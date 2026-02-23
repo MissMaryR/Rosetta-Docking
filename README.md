@@ -12,7 +12,6 @@
 5. Save library as mol2
 6. Also save the original ligand as a spartan file and mol2 file - just in case
 
-[refer to video] (https://www.youtube.com/watch?v=ocuT3tYeK7I)<img width="468" height="28" alt="image" src="https://github.com/user-attachments/assets/90d0bc6a-2f40-40d9-9ec6-3da84b3f6505" />
-
+[refer to video](https://www.youtube.com/watch?v=ocuT3tYeK7I) 
 
 ## 
