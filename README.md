@@ -108,9 +108,9 @@ CST::END
 
  ### Constraints in simpler terms:
    * 1st column - distance in Angstroms or angle to constrain
-   * *use PyMOL Wizard function to measure distances and angles for reference
+      * use PyMOL Wizard function to measure distances and angles for reference
    * 2nd column - how much you allow it to move outside of the constraint from 1st column
-   *  *we constrain at 3A with a tolerance of 0.2A, so the ligand will be constrained 2.8-3.2A to the residue
+      * we constrain at 3A with a tolerance of 0.2A, so the ligand will be constrained 2.8-3.2A to the residue
    * 3rd column - use 100 to strictly use the constraint, reduce to 50 or 25 to more loosely follow the constraint
    * 4th column - 1=covalent 0=non-covalent
 
