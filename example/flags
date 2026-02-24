@@ -19,7 +19,7 @@
 -parser:protocol /quobyte/jbsiegelgrp/missmaryr/scripts/dock2.xml
 -enzdes::cstfile cst_X.cst
 -s docked.pdb
--extra_res_fa /quobyte/jbsiegelgrp/missmaryr/GH3/LIGANDS/all_conformers/CL3.params
+-extra_res_fa CL3.params
 
 -nstruct 20
 -out:overwrite
