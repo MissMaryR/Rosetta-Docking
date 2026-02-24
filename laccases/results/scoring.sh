@@ -16,4 +16,4 @@ eval "$(conda shell.bash hook)"
 conda activate /quobyte/jbsiegelgrp/software/envs/ligandmpnn_env
 
 # Run your Python scoring script
-python /quobyte/jbsiegelgrp/missmaryr/scripts/rosetta_lacc.py
+python /quobyte/jbsiegelgrp/username/scripts/rosetta_lacc.py
