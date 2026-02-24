@@ -80,7 +80,7 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 2. We refer to the [RosettaCommons page](https://docs.rosettacommons.org/docs/latest/rosetta_basics/file_types/match-cstfile-format) for how to make constraints
 3. Here is a diagram for ATOM labels:
    * <img width="518" height="282" alt="Screenshot 2026-02-23 at 3 49 32 PM" src="https://github.com/user-attachments/assets/ffa6f6db-52a4-4bd6-a5b6-8b3c8dc3dee9" />
-   * example constraint file to accompany diagram
+* example constraint file to accompany diagram
 ```
 CST::BEGIN
   TEMPLATE::   ATOM_MAP: 1 atom_name: C1 C2 C3
@@ -89,12 +89,12 @@ CST::BEGIN
   TEMPLATE::   ATOM_MAP: 2 atom_type: O1 O2 O3
   TEMPLATE::   ATOM_MAP: 2 residue1: E
 
-  CONSTRAINT:: distanceAB:    2.00   0.30 100.00  1        0
-  CONSTRAINT::    angle_A:  105.10   6.00 100.00  360.00   1
-  CONSTRAINT::    angle_B:  116.90   5.00  50.00  360.00   1
-  CONSTRAINT::  torsion_A:  105.00  10.00  50.00  360.00   2
-  CONSTRAINT::  torsion_B:  180.00  10.00  25.00  180.00   4
-  CONSTRAINT:: torsion_AB:    0.00  45.00   0.00  180.00   5
+  CONSTRAINT:: distanceAB:    2.00   0.30 100.00  1        
+  CONSTRAINT::    angle_A:  105.10   6.00 100.00  360.00   
+  CONSTRAINT::    angle_B:  116.90   5.00  50.00  360.00   
+  CONSTRAINT::  torsion_A:  105.00  10.00  50.00  360.00   
+  CONSTRAINT::  torsion_B:  180.00  10.00  25.00  180.00   
+  CONSTRAINT:: torsion_AB:    0.00  45.00   0.00  180.00   
 CST::END
 ```
    * use residue3 for your ligand and residue1 for the residue using its' one letter code
@@ -104,7 +104,7 @@ CST::END
    * The 2nd, xtol, column specifies the allowed tolerance xtol of the value.
    * The 3rd column specifies the force constant k, or the strength of this particular parameter. If x is the value of the constrained parameter, the score penalty applied will be: 0 if |x - x0| < xtol and k * ( |x - x0| - xtol ) otherwise This 3rd column is only relevant for enzdes, and the number in it is not used by the matcher.
    * The 4th column has a special meaning in case of the distanceAB parameter. It specifies whether the constrained interaction is covalent or not. 1 means covalent, 0 means non-covalent
-   * we dont use the 5th column - delete it
+   * we dont use the 5th column - deleted
 
  ### Constraints in simpler terms:
    * 1st column - distance in Angstroms or angle to constrain
@@ -113,6 +113,42 @@ CST::END
       * we constrain at 3A with a tolerance of 0.2A, so the ligand will be constrained 2.8-3.2A to the residue
    * 3rd column - use 100 to strictly use the constraint, reduce to 50 or 25 to more loosely follow the constraint
    * 4th column - 1=covalent 0=non-covalent
+
+4. Save cst_X.cst file
+5. Open your docked.pdb file with TextEdit and add this to the top
+```
+REMARK 666 MATCH TEMPLATE X  CL3   1   MATCH MOTIF A GLU    409  1              
+REMARK 666 MATCH TEMPLATE X  CL3   1   MATCH MOTIF A ASP    220  2
+```
+   *should look like this:
+   <img width="576" height="95" alt="Screenshot 2026-02-23 at 4 10 11 PM" src="https://github.com/user-attachments/assets/8aaff5ea-2cd1-4b9a-8a5c-006377c1219a" />
+
+6. Adjust the ligand (CL3) & residues (GLU & ASP) to yours
+   * tt should be in the same order as your constraint file
+   * here, CL3 is on chain X and GLU/ASP are both on chain A; with GLU as residue 409 and ASP as residue 220
+   * be careful - this is a common spot for rosetta crashes, everything must correlate correctly
+7. Save the docked.pdb
+
+## 6) Notes for dock2.xml file
+
+Do you have a dimer? trimer?
+   * “min_jumps” should be equal to the number of chains
+
+To adjust the script for design:
+   * All “repack_only” should be 1 for docking, 0 for design
+   * All “design” should be 0 for docking, 1 for design
+
+## 7) Upload files to HIVE and run docking
+
+1.	Enzyme with substrate – docked.pdb
+2.	Constraint file – cst_X.cst
+3.	Flags file – flags
+4.	Conformer library – 
+5.	Params file – 
+6.	.xml – docking.xml
+7.	Submission script – submit.sh
+
+
 
 
 
