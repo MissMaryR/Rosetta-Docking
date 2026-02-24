@@ -129,7 +129,7 @@ REMARK 666 MATCH TEMPLATE X  CL3   1   MATCH MOTIF A ASP    220  2
    * be careful - this is a common spot for rosetta crashes, everything must correlate correctly
 7. Save the docked.pdb
 
-## 6) Notes for dock2.xml file
+## 6) Notes for dock.xml file
 
 Do you have a dimer? trimer?
    * “min_jumps” should be equal to the number of chains
@@ -145,8 +145,10 @@ To adjust the script for design:
 3.	Flags file – flags
 4.	Conformer library – CL3_conformers.pdb (not shown on github)
 5.	Params file – CL3.params
-6.	dock xml file – dock2.xml
+6.	dock xml file – dock.xml
 7.	Submission script – submit.sh
+8.	results folder - with zzzScoring.sh in it
+9.	scripts folder - with rosetta_scores6.py in it
 
 ### run docking with 
 ```
