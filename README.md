@@ -77,8 +77,9 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 ## 5) Use PyMOL to make constraint file - cst_X.cst
 
 1. Open the cst_X.cst with emacs or textedit
-2. We refer to the [RosettaCommons page](https://docs.rosettacommons.org/docs/latest/rosetta_basics/file_types/match-cstfile-format) for how to make constraints
-3. Here is a diagram for ATOM labels:
+2. Open your docked.pdb file, select ligand and residues to be constrained, label -> atom names
+3. We refer to the [RosettaCommons page](https://docs.rosettacommons.org/docs/latest/rosetta_basics/file_types/match-cstfile-format) for how to make constraints
+4. Here is a diagram for ATOM labels:
    * <img width="518" height="282" alt="Screenshot 2026-02-23 at 3 49 32 PM" src="https://github.com/user-attachments/assets/ffa6f6db-52a4-4bd6-a5b6-8b3c8dc3dee9" />
 * example constraint file to accompany diagram
 ```
