@@ -9,7 +9,7 @@ CST::BEGIN
   TEMPLATE::   ATOM_MAP: 2 atom_name: OE2 CD CG
   TEMPLATE::   ATOM_MAP: 2 residue1:  E
 
-  CONSTRAINT:: distanceAB:  3.0  0.2 100 0
+  CONSTRAINT:: distanceAB:  3.0  0.3 100 0
 CST::END
 
 #ASP231 to C4
@@ -21,6 +21,5 @@ CST::BEGIN
   TEMPLATE::   ATOM_MAP: 2 atom_name: OD2 CG CB
   TEMPLATE::   ATOM_MAP: 2 residue1:  D
 
-  CONSTRAINT:: distanceAB:   3.0  0.2 100 0
-  CONSTRAINT::    angle_A: 110.0 10.0 100 360
+  CONSTRAINT:: distanceAB:   3.0  0.3 100 0
 CST::END
