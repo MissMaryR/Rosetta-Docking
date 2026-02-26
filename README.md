@@ -22,6 +22,21 @@
 
 ## 2) Use HIVE to prepare ligands for Rosetta
 
+login to HIVE
+```
+ssh username@hive.hpc.ucdavis.edu
+```
+
+move folder from local to HIVE
+```
+scp -r /path/to/local/folder username@hive.hpc.ucdavis.edu:/quobyte/jbsiegelgrp/username
+```
+
+move folder from HIVE to local
+```
+scp -r username@hive.hpc.ucdavis.edu:/quobyte/jbsiegelgrp/username/folder /path/to/local/folder
+```
+
 1. upload CL3.mol2 library conformer to HIVE
 * CL3 can instead be any 3 letter/number code for a ligand, dont use 001, be creative
 3. run with
