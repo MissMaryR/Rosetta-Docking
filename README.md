@@ -154,6 +154,8 @@ Before manually docking, use one of these tools to get a rough starting pose:
 3. Open the saved file and verify:
    - The ligand is at the **bottom** of the file
    - The ligand is labeled as **chain X** (if 2 ligands: chains X and Y)
+   - The main enzyme chain should be **chain A***.
+   - If different than chains A & X, adjust dock.xml file to your chains.
 4. This is your **`docked.pdb`** file
 
 ---
