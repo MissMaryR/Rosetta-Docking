@@ -72,6 +72,8 @@ scp -r /path/to/local/folder username@hive.hpc.ucdavis.edu:/quobyte/jbsiegelgrp/
 # HIVE → Local
 scp -r username@hive.hpc.ucdavis.edu:/quobyte/jbsiegelgrp/username/folder /path/to/local/folder
 ```
+### Alternatively use [Cyberduck](https://cyberduck.io/) for file transfers - its great!
+
 
 ### Naming your ligand
 > 💡 Use a creative 3-letter/number code (e.g., `CL3`). **Avoid `001`** — pick something unique and meaningful to your project.
